@@ -4,12 +4,11 @@ import {createStackNavigator} from '@react-navigation/stack';
 
 import {UserContext} from '../Context/User';
 
-import Loading from '../Screens/Login';
+import Loading from '../Screens/Loading';
 
 import Login from '../Screens/Login';
-import MovieHome from '../Screens/MoveHome';
-import MovieDetail from '../Screens/MovieDetail';
-import { Platform } from 'react-native';
+import MovieHome from './MovieHome';
+import MovieDetail from './MovieDetail';
 
 
 const Stack = createStackNavigator();

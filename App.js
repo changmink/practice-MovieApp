@@ -6,9 +6,11 @@ import {UserContextProvider} from './src/Context/User';
 
 const App = () => {
   return (
-    <UserContextProvier>
+    <UserContextProvider>
       <StatusBar barStyle="light-content"/>
       <Navigator/>
-    </UserContextProvier>
+    </UserContextProvider>
   );
 }
+
+export default App;

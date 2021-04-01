@@ -12,15 +12,23 @@ const defaultContext = {
 const UserContext = createContext(defaultContext);
 
 const UserContextProvider = ({children}) => {
+    
+    const [userInfo, setUserInfo] = useState(undefined);
+    const [isLoading, setIsLoading] = useState(false);
+    
+    
+    const login = (email, password) => {
     // Use Email and Password for login API
     // Get token and UserInfo via Login API
-    AsyncStorage.setItem('token', 'save your token').then(()=>{
-        setUserInfo({
-            name: 'changmin.dev',
-            email: 'changmin043@gmail.com'
+        AsyncStorage.setItem('token', 'save your token').then(()=>{
+            setUserInfo({
+                name: 'changmin.dev',
+                email: 'changmin043@gmail.com'
+            });
+            setIsLoading(true);
         });
-        setIsLoading(true);
-    });
+    }
+
     const getUserInfo = () => {
         AsyncStorage.getItem('token')
         .then(value => {
@@ -43,7 +51,7 @@ const UserContextProvider = ({children}) => {
         setUserInfo(undefined);
     };
     
-    userEffect(() => {
+    useEffect(() => {
         getUserInfo();
     }, []);
 
@@ -62,4 +70,4 @@ const UserContextProvider = ({children}) => {
     );
 };
 
-
+export {UserContextProvider, UserContext};

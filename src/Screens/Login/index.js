@@ -38,9 +38,9 @@ const Login = ({navigation}) => {
     return (
         <Container>
             <FormContainer>
-                <Input style={{marginBottom: 16}} placeholder="이메일"/>
+                <Input style={{marginBottom: 16}} placeHolder="email"/>
                 <Input style={{marginBottom: 16}}
-                    placeholder="비밀번호"
+                    placeHolder="비밀번호"
                     secureTextEntry={true}
                 />
                 <Button
